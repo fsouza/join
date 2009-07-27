@@ -16,7 +16,7 @@ class Curso(models.Model):
     slug = models.SlugField(max_length = 100, blank = True, unique = True)
 
 class Material(models.Model):
-    arquivo = models.FileField(upload_to = 'cursos/conteudos')
+    arquivo = models.FileField(upload_to = 'cursos/materiais')
     curso = models.ForeignKey('Curso')
 
 class Aluno(User):
