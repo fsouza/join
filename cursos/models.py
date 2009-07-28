@@ -1,6 +1,9 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
+from util.signals import curso_pre_save
+from util.signals import instrutor_pre_save
+from django.db.models import signals
 
 # Create your models here.
 class Instrutor(models.Model):
@@ -50,3 +53,7 @@ class Inscricao(models.Model):
     status = models.BooleanField()
     aluno = models.ForeignKey('Aluno')
     curso = models.ForeignKey('Curso')
+
+# Conectando sinais
+signals.pre_save.connect(instrutor_pre_save, sender = Instrutor)
+signals.pre_save.connect(curso_pre_save, sender = Curso)

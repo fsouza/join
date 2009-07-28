@@ -7,7 +7,9 @@
 {% endblock topo %}
 
 {% block conteudo %}
-    {% for curso in cursos %}
-        <p>{{ curso.titulo }}</p>
-    {% endfor %}
+    <ul>
+        {% for curso in cursos %}
+            <li><a href="{{ curso.get_url }}">{{ curso.titulo }}</a> (instrutor: {{ curso.instrutor.nome }});</li>
+        {% endfor %}
+    </ul>
 {% endblock conteudo %}

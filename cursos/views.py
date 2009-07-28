@@ -11,8 +11,8 @@ def instrutor(request, slug):
 
 def curso(request, slug):
     curso = get_object_or_404(Curso, slug = slug)
-    return render_to_response('', locals(), context_instance = RequestContext(request))
+    return render_to_response('curso.html', locals(), context_instance = RequestContext(request))
 
 def cursos(request):
     cursos = Curso.objects.all()
-    return render_to_response('', locals(), context_instance = RequestContext(request))
+    return render_to_response('cursos.html', locals(), context_instance = RequestContext(request))
