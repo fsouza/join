@@ -1,0 +1,16 @@
+{% extends "super.html" %}
+
+{% block titulo %}{{ block.super }} - Curso "{{ curso.titulo }}"{% endblock titulo %}
+
+{% block topo %}
+    <h1>{{ curso.titulo }}</h1>
+{% endblock topo %}
+
+{% block conteudo %}
+    <p><strong>Instrutor:</strong> {{ curso.instrutor.nome }}<br />
+    <strong>Descrição do curso:</strong> {{ curso.descricao }}<br />
+    <strong>Carga horária:</strong> {{ curso.carga_horaria }} horas<br />
+    <strong>Pré-requisitos:</strong> {{ curso.pre_requisitos }}</p>
+    
+    <p align="center"><a href="{% url cursos.views.cursos %}">Voltar para a listagem de cursos</a></p>
+{% endblock conteudo %}
