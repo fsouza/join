@@ -7,7 +7,7 @@
 {% endblock topo %}
 
 {% block conteudo %}
-    <p><strong>Instrutor:</strong> {{ curso.instrutor.nome }}<br />
+    <p><strong>Instrutor:</strong> <a href="{{ curso.instrutor.get_url }}">{{ curso.instrutor.nome }}</a><br />
     <strong>Descrição do curso:</strong> {{ curso.descricao }}<br />
     <strong>Carga horária:</strong> {{ curso.carga_horaria }} horas<br />
     <strong>Pré-requisitos:</strong> {{ curso.pre_requisitos }}</p>

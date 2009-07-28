@@ -6,7 +6,7 @@ from models import Instrutor, Curso
 
 def instrutor(request, slug):
     instrutor = get_object_or_404(Instrutor, slug = slug)
-    return render_to_response('', locals(), context_instance = RequestContext(request))
+    return render_to_response('instrutor.html', locals(), context_instance = RequestContext(request))
 
 def curso(request, slug):
     curso = get_object_or_404(Curso, slug = slug)

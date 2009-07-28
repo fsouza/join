@@ -14,7 +14,11 @@ class Instrutor(models.Model):
         verbose_name_plural = gettext_lazy('Instrutores')
 
     nome = models.CharField(max_length = 200)
-    descricao = models.TextField()
+    biografia = models.TextField()
+    formacao = models.CharField(max_length = 250)
+    foto = models.ImageField(
+                    upload_to = 'cursos/fotos_instrutores'
+                )
     slug = models.SlugField(max_length = 100, blank = True, unique = True)
 
     def get_url(self):

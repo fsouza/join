@@ -1,0 +1,16 @@
+{% extends "super.html" %}
+
+{% block titulo %}{{ block.super }} - Instrutor "{{ instrutor.nome }}"{% endblock titulo %}
+
+{% block topo %}
+    <h1>{{ instrutor.nome }}</h1>
+{% endblock topo %}
+
+{% block conteudo %}
+    <p><strong>Nome:</strong> {{ instrutor.nome }}<br />
+    <strong>Biografia:</strong> {{ instrutor.biografia|linebreaks }}<br />
+    <strong>Formação:</strong> {{ instrutor.formacao }}<br />
+    <strong>Foto:</strong> <img src="{{ MEDIA_URL }}{{ instrutor.foto }}" /></p>
+    
+    <p align="center"><a href="javascript:history.back();">Voltar</a></p>
+{% endblock conteudo %}
