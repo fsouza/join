@@ -1,0 +1,13 @@
+{% extends "super.html" %}
+
+{% block titulo %}{{ block.super }} - Visualização dos Cursos{% endblock titulo %}
+
+{% block topo %}
+    <h1>Listagem de cursos</h1>
+{% endblock topo %}
+
+{% block conteudo %}
+    {% for curso in cursos %}
+        <p>{{ curso.titulo }}</p>
+    {% endfor %}
+{% endblock conteudo %}
