@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{% block title %}Join - Gerenciador de Cursos{% endblock title %}</title>
+
+{% block metatags %}
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+<meta name="keywords" content="cursos, inscrição, estudos" />
+<meta name="description" content="Join é um sistema de gerenciamento de inscrições em cursos." />
+{% endblock metatags %} 
+
+{% block style %} 
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}style.css" />
+{% endblock style %} 
+
+{% block scripts %} 
+
+{% endblock scripts %}
+
+</head>
+<body>
+
+    <div id="all">
+        <div id="top">
+            {% block top %}
+            {% endblock top %}
+        </div>
+        
+        <div id="menu">
+            {% block menu %}
+            {% endblock menu %}
+        </div>
+        
+        <div id="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+        <div id="rodape">
+            {% block rodape %}
+                &copy; 2009 - Nenhum direito reservado
+            {% endblock rodape %}
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    background-color: #EEE;
+    font-family: Verdana;
+    font-size: 10pt;
+    margin: 0 0 0 0;
+}
+
+#all {
+    background-color: #FFF;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
