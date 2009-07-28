@@ -12,5 +12,13 @@
     <strong>Formação:</strong> {{ instrutor.formacao }}<br />
     <strong>Foto:</strong> <img src="{{ MEDIA_URL }}{{ instrutor.foto }}" /></p>
     
+    <p><strong>Cursos deste instrutor</strong></p>
+    
+    <ul>
+        {% for curso in cursos %}
+            <li><a href="{{ curso.get_url }}">{{ curso.titulo }}</a>;</li>
+        {% endfor %}
+    </ul>
+    
     <p align="center"><a href="javascript:history.back();">Voltar</a></p>
 {% endblock conteudo %}
