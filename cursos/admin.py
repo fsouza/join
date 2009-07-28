@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin.options import ModelAdmin
-from models import Aluno, Instrutor, Inscricao, Telefone, Curso, Material
+from models import Aluno, Instrutor, Inscricao, Telefone, Curso
 
 class CursoAdmin(ModelAdmin):
     list_display = ('titulo', 'carga_horaria',)
@@ -16,4 +16,3 @@ admin.site.register(Instrutor, InstrutorAdmin)
 admin.site.register(Inscricao)
 admin.site.register(Telefone)
 admin.site.register(Curso, CursoAdmin)
-admin.site.register(Material)
