@@ -12,8 +12,8 @@ class InstrutorAdmin(ModelAdmin):
      search_fields = ('nome',)
 
 admin.site.register(Aluno)
-admin.site.register(Instrutor)
+admin.site.register(Instrutor, InstrutorAdmin)
 admin.site.register(Inscricao)
 admin.site.register(Telefone)
-admin.site.register(Curso)
+admin.site.register(Curso, CursoAdmin)
 admin.site.register(Material)
