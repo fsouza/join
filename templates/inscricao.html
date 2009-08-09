@@ -2,3 +2,11 @@
 
 {% block titulo %}{{ block.super }} - Inscrição no Curso "{{ curso.titulo }}"{% endblock titulo %}
 
+{% block topo %}
+    <h1>Inscrição no curso "{{ curso.titulo }}"</h1>
+{% endblock topo %}
+
+{% block conteudo %}
+    <p>Em construção.</p>
+    <p align="center"><a href="javascript:history.back();">Voltar</a></p>
+{% endblock conteudo %}
