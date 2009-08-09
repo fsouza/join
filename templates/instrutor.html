@@ -15,7 +15,7 @@
     <p><strong>Cursos deste instrutor</strong></p>
     
     <ul>
-        {% for curso in cursos %}
+        {% for curso in instrutor.curso_set.all %}
             <li><a href="{{ curso.get_url }}">{{ curso.titulo }}</a>;</li>
         {% endfor %}
     </ul>
