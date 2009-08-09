@@ -43,6 +43,9 @@ class Curso(models.Model):
     def get_url(self):
         return reverse('cursos.views.curso', kwargs = { 'slug' : self.slug })
 
+    def get_url_inscricao(self):
+        return reverse('cursos.views.inscricao', kwargs = { 'slug' : self.slug })
+
     def __unicode__(self):
         return self.titulo
 

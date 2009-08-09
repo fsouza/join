@@ -15,3 +15,7 @@ def curso(request, slug):
 def cursos(request):
     cursos = Curso.objects.all()
     return render_to_response('cursos.html', locals(), context_instance = RequestContext(request))
+
+def inscricao(request, slug):
+    curso = get_object_or_404(Curso, slug = slug)
+    return render_to_response('inscricao.html', locals(), context_instance = RequestContext(request))

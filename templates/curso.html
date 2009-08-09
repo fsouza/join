@@ -12,5 +12,5 @@
     <strong>Carga horária:</strong> {{ curso.carga_horaria }} horas<br />
     <strong>Pré-requisitos:</strong> {{ curso.pre_requisitos }}</p>
     
-    <p align="center"><a href="{% url cursos.views.cursos %}">Voltar para a listagem de cursos</a></p>
+    <p align="center"><a href="{{ curso.get_url_inscricao }}">Inscrever-se</a> | <a href="{% url cursos.views.cursos %}">Voltar para a listagem de cursos</a></p>
 {% endblock conteudo %}
