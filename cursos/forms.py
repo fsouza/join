@@ -1,10 +1,5 @@
 #coding:utf-8
 
-try:
-    import Image
-except ImportError:
-    from PIL import Image
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
