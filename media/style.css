@@ -68,6 +68,29 @@ body {
 	text-decoration: underline;
 }
 
+#rodape {
+	padding-top: 5em;
+	font-size: 11px;
+	text-align: center;
+}
+
+#rodape a {
+	color: #000;
+}
+
+#rodape a:visited {
+	color: #000;
+}
+
+#rodape a:active {
+	color: #000;
+}
+
+#rodape a:hover {
+	color: #000;
+	font-weight: bold;
+}
+
 .divAfastada {
 	margin-right: 20em;
 }
