@@ -7,22 +7,24 @@ from django.contrib.auth.models import User
 from models import Aluno
 from util.validacoes import validar_cpf
 
-class CPFField(forms.CharField):
-    def clean(self, value):
-        if not value:
-            raise forms.ValidationError('Este campo é obrigatório.')
-        cpf = value.replace('.', '').replace('-', '')
-        if not validar_cpf(cpf):
-            raise forms.ValidationError('Você deve digitar um CPF válido.')
-
 class AlunoForm(forms.ModelForm):
     class Meta:
         model = Aluno
         fields = ('username', 'first_name', 'last_name', 'email', 'password')
 
-    cpf = CPFField(max_length = 15, widget = forms.TextInput())
+    cpf = forms.CharField(max_length = 15, widget = forms.TextInput())
     password = forms.CharField(max_length = 16, min_length = 4, widget = forms.PasswordInput, label = 'Senha')
     confirmacao_senha = forms.CharField(max_length = 16, min_length = 4, widget = forms.PasswordInput)
+
+    def clean_cpf(self):
+        self.cleaned_data['cpf'] = self.cleaned_data['cpf'].replace('.', '').replace('-', '')
+        if not validar_cpf(self.cleaned_data['cpf']):
+            raise forms.ValidationError('Você deve digitar um CPF válido.')
+
+        if Aluno.objects.filter(cpf = self.cleaned_data['cpf']).count() > 0:
+            raise forms.ValidationError('Este CPF já está cadastrado.')
+
+        return self.cleaned_data['cpf']
 
     def clean_username(self):
         if User.objects.filter(username = self.cleaned_data['username']).count() > 0:
@@ -45,6 +47,7 @@ class AlunoForm(forms.ModelForm):
     def save(self, commit = True):
         aluno = super(AlunoForm, self).save(commit = False)
         aluno.set_password(self.cleaned_data['password'])
+        aluno.cpf = self.cleaned_data['cpf']
 
         if commit:
             aluno.save()

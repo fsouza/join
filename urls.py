@@ -21,6 +21,6 @@ urlpatterns = patterns('',
     (r'^$', 'views.bemvindo'),
     (r'^cursos/', include('cursos.urls')),
     (r'^media/(.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
-    (r'^login/$', 'django.contrib.auth.views.login', { 'template_name' : os.path.join(dir, 'templates/login.html')}),
-    (r'^logout/$', 'django.contrib.auth.views.logout'),
+    (r'^login/$', 'django.contrib.auth.views.login', { 'template_name' : 'login.html'}),
+    (r'^logout/$', 'django.contrib.auth.views.logout', { 'template_name' : 'logout.html'}),
 )

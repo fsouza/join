@@ -38,6 +38,12 @@
             {% endblock menu %}
         </div>
         
+        {% if user.is_authenticated %}
+            <div id="mensagem_usuario">
+                Seja-bem vindo {{ user.first_name }} {{ user.last_name }}.
+            </div>
+        {% endif %}
+        
         <div id="topo">
             {% block topo %}
             {% endblock topo %}

@@ -96,6 +96,25 @@ body {
 	font-weight: bold;
 }
 
+#mensagem_usuario {
+	text-align: right;
+	color: #777;
+	font-size: 11px;
+}
+
 .divAfastada {
 	margin-right: 20em;
+}
+
+.table_form {
+	width: 70%;
+	margin-left: 6em;
+}
+
+.label_table_form {
+	text-align: right;
+}
+
+.wid_table_form {
+	text-align: left;
 }

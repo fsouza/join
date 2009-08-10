@@ -55,7 +55,7 @@ class Aluno(User):
         verbose_name = gettext_lazy('Aluno')
         verbose_name_plural = gettext_lazy('Alunos')
 
-    cpf = models.CharField(max_length = 11)
+    cpf = models.CharField(max_length = 11, unique = True)
 
     def __unicode__(self):
         return self.username

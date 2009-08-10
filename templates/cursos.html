@@ -9,6 +9,9 @@
 {% block conteudo %}
     <p>Veja abaixo uma lista de cursos. Para visualizar detalhes de um curso, clique sobre o mesmo.
     Você deve estar autenticado para visualizar os detalhes dos cursos.</p>
+    {% if not cursos %}
+        <p>Nenhum curso cadastrado.</p>
+    {% endif %}
     <ul>
         {% for curso in cursos %}
             <li><a href="{{ curso.get_url }}">{{ curso.titulo }}</a> (instrutor: {{ curso.instrutor.nome }});</li>
