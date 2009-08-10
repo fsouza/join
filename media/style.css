@@ -10,8 +10,6 @@ body {
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 2em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
 }
 
 #menu {
@@ -48,6 +46,11 @@ body {
 	text-decoration: underline;
 }
 
+#conteudo {
+	margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
 #conteudo a {
 	color: #0000FF;
 	text-decoration: underline;
@@ -71,7 +74,9 @@ body {
 #rodape {
 	padding-top: 5em;
 	font-size: 11px;
-	text-align: center;
+	text-align: right;
+	margin-left: 20em;
+    margin-right: 2em;
 }
 
 #rodape a {

@@ -24,21 +24,22 @@
 <body>
 
     <div id="tudo">
-        <div id="topo">
-            {% block topo %}
-            {% endblock topo %}
-        </div>
-        
         <div id="menu">
             {% block menu %}
                 <a href="{% url views.bemvindo %}">Página Inicial</a> | 
                 <a href="{% url cursos.views.cursos %}">Listagem de Cursos</a> | 
                 {% if user.is_authenticated %}
-                    <a href="{% url django.contrib.auth.views.logout %}">Sair do sistema</a>
+                    <a href="{% url django.contrib.auth.views.logout %}">Sair do sistema</a> | 
                 {% else %}
-                    <a href="{% url django.contrib.auth.views.login %}">Entrar no sistema</a>
+                    <a href="{% url django.contrib.auth.views.login %}">Entrar no sistema</a> | 
                 {% endif %}
+                <a href="{% url views.bemvindo %}admin/" target="_blank">Administração</a>
             {% endblock menu %}
+        </div>
+        
+        <div id="topo">
+            {% block topo %}
+            {% endblock topo %}
         </div>
         
         <div id="conteudo">
@@ -48,7 +49,8 @@
         
         <div id="rodape">
             {% block rodape %}
-                <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/br/88x31.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Join - Gerenciador de Cursos</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francisco Ant&#244;nio da Silva Souza</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/" target="_blank">Creative Commons Atribui&#231;&#227;o-Uso N&#227;o-Comercial-Compartilhamento pela mesma Licen&#231;a 2.5 Brasil License</a>.
+                <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/br/88x31.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Join - Gerenciador de Cursos</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francisco Ant&#244;nio da Silva Souza</span> is licensed under a <br />
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/" target="_blank">Creative Commons Atribui&#231;&#227;o-Uso N&#227;o-Comercial-Compartilhamento pela mesma Licen&#231;a 2.5 Brasil License</a>.
             {% endblock rodape %}
         </div>
     </div>
