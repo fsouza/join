@@ -18,7 +18,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/(.*)', admin.site.root),
-    (r'^$', include('cursos.urls')),
+    (r'^$', 'views.bemvindo'),
     (r'^cursos/', include('cursos.urls')),
     (r'^media/(.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
     (r'^login/$', 'django.contrib.auth.views.login', { 'template_name' : os.path.join(dir, 'templates/login.html')}),
