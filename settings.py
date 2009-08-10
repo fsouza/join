@@ -51,6 +51,10 @@ MEDIA_URL = '/media/'
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout'
+LOGIN_REDIRECT_URL = '/cursos/'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'hod9srh%c5z0daz273k=n+k1^98t1f6o5w2t%jf-%os%m+6j6u'
 

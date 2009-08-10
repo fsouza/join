@@ -13,3 +13,39 @@ body {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
+
+#menu {
+	background-color: #000;
+	width: 100%;
+	height: 2em;
+	font-size: 11px;
+	vertical-align: middle;
+}
+
+#menu a {
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#menu a:visited {
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#menu a:active {
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: #EEE;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.divAfastada {
+	margin-right: 20em;
+}

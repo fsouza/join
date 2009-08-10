@@ -18,8 +18,15 @@
 {% endblock scripts %}
 
 {% block conteudo %}
-    <form action="." name="login" id="formLogin" method="post" onsubmit="validarLogin(this);">
-        <div id="divLogin" align="left">
+    <h1>Efetuar Login no Sistema</h1>
+    {% if form.errors %}
+        <div align="center" style="padding-top:1em;padding-bottom:2em;font-size:16px;color:red;">
+            Erro: Usuario ou senha incorretos.
+        </div>
+    {% endif %}
+    
+    <form action="." name="login" id="formLogin" method="post" onsubmit="return validarLogin(this);">
+        <div id="divLogin" align="right" class="divAfastada">
             Nome de usuário: {{ form.username }}<br />
             Senha: {{ form.password }}<br /><br />
             <input type="hidden" name="next" value="{{ next }}" />

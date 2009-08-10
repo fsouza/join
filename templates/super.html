@@ -31,6 +31,11 @@
         
         <div id="menu">
             {% block menu %}
+                {% if user.is_authenticated %}
+                    <a href="{% url django.contrib.auth.views.logout %}">Sair do sistema</a>
+                {% else %}
+                    <a href="{% url django.contrib.auth.views.login %}">Entrar no sistema</a>
+                {% endif %}
             {% endblock menu %}
         </div>
         

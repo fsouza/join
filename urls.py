@@ -5,6 +5,9 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
+import os
+dir = os.path.abspath(os.path.dirname(__file__))
+
 urlpatterns = patterns('',
     # Example:
     # (r'^join/', include('join.foo.urls')),
@@ -18,4 +21,6 @@ urlpatterns = patterns('',
     (r'^$', include('cursos.urls')),
     (r'^cursos/', include('cursos.urls')),
     (r'^media/(.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
+    (r'^login/$', 'django.contrib.auth.views.login', { 'template_name' : os.path.join(dir, 'templates/login.html')}),
+    (r'^logout/$', 'django.contrib.auth.views.logout'),
 )
