@@ -40,7 +40,7 @@
         
         {% if user.is_authenticated %}
             <div id="mensagem_usuario">
-                Seja-bem vindo {{ user.first_name }} {{ user.last_name }}.
+                Seja-bem vindo, <strong>{{ user.first_name }} {{ user.last_name }}</strong>.
             </div>
         {% endif %}
         

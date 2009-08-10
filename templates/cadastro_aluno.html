@@ -10,43 +10,63 @@
     {% if msg %}
         <strong>{{ msg }}</strong>
     {% else %}
-        {% if form.errors %}
-            <font color="red">Erros de validação:<br /><br /></font>
-            {% for campo in form %}
-                {% if campo.errors %}
-                    <br /><strong>{{ campo.label }}</strong> {{ campo.errors }}
-                {% endif %}
-            {% endfor %}
-        {% endif %}
         <form method="post" action="{% url cursos.views.cadastrar %}">
             <table class="table_form" cellpadding="2" cellspacing="0">
                 <tr>
                     <td class="label_table_form">Nome:</td>
-                    <td class="wid_table_form">{{ form.first_name }}</td>
+                    <td class="wid_table_form">{{ form.first_name }}
+                    {% if form.first_name.errors %}
+                        <br /><div class="erro">{{ form.first_name.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">Sobrenome:</td>
-                    <td class="wid_table_form">{{ form.last_name }}</td>
+                    <td class="wid_table_form">{{ form.last_name }}
+                    {% if form.last_name.errors %}
+                        <br /><div class="erro">{{ form.last_name.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">E-mail:</td>
-                    <td class="wid_table_form">{{ form.email }}</td>
+                    <td class="wid_table_form">{{ form.email }}
+                    {% if form.email.errors %}
+                        <br /><div class="erro">{{ form.email.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">Nome de usuário:</td>
-                    <td class="wid_table_form">{{ form.username }}</td>
+                    <td class="wid_table_form">{{ form.username }}
+                    {% if form.username.errors %}
+                        <br /><div class="erro">{{ form.username.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">Senha:</td>
-                    <td class="wid_table_form">{{ form.password }}</td>
+                    <td class="wid_table_form">{{ form.password }}
+                    {% if form.password.errors %}
+                        <br /><div class="erro">{{ form.password.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">Confirme a senha:</td>
-                    <td class="wid_table_form">{{ form.confirmacao_senha }}</td>
+                    <td class="wid_table_form">{{ form.confirmacao_senha }}
+                    {% if form.confirmacao_senha.errors %}
+                        <br /><div class="erro">{{ form.confirmacao_senha.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">CPF:</td>
-                    <td class="wid_table_form">{{ form.cpf }}</td>
+                    <td class="wid_table_form">{{ form.cpf }}
+                    {% if form.cpf.errors %}
+                        <br /><div class="erro">{{ form.cpf.errors }}</div>
+                    {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td class="label_table_form">&nbsp;</td>

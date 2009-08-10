@@ -113,8 +113,14 @@ body {
 
 .label_table_form {
 	text-align: right;
+	vertical-align: top;
 }
 
 .wid_table_form {
 	text-align: left;
+}
+
+.erro {
+	font-size: 11px;
+	color: #F00;
 }

@@ -15,6 +15,9 @@ class AlunoForm(forms.ModelForm):
     cpf = forms.CharField(max_length = 15, widget = forms.TextInput())
     password = forms.CharField(max_length = 16, min_length = 4, widget = forms.PasswordInput, label = 'Senha')
     confirmacao_senha = forms.CharField(max_length = 16, min_length = 4, widget = forms.PasswordInput)
+    email = forms.EmailField(max_length = 200, min_length = 6, label = 'E-mail', required = True)
+    first_name = forms.CharField(max_length = 50, min_length = 3, required = True)
+    last_name = forms.CharField(max_length = 100, min_length = 3, required = True)
 
     def clean_cpf(self):
         self.cleaned_data['cpf'] = self.cleaned_data['cpf'].replace('.', '').replace('-', '')
