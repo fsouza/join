@@ -1,0 +1,29 @@
+{% extends "super.html" %}
+
+{% block titulo %}{{ block.super }} - Login{% endblock titulo %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script>
+        function validarLogin(formulario) {
+            if (formulario.username.value != "" && formulario.password.value != "") {
+                return true;
+            } else {
+                alert("Preencha corretamente todos os campos.");
+                formulario.username.focus();
+                return false;
+            }
+        }
+    </script>
+{% endblock scripts %}
+
+{% block conteudo %}
+    <form action="." name="login" id="formLogin" method="post" onsubmit="validarLogin(this);">
+        <div id="divLogin" align="left">
+            Nome de usuário: {{ form.username }}<br />
+            Senha: {{ form.password }}<br /><br />
+            <input type="hidden" name="next" value="{{ next }}" />
+            <input type="submit" value="Entrar" />
+        </div>
+    </form>
+{% endblock conteudo %}
