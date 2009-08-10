@@ -31,7 +31,8 @@
                 {% if user.is_authenticated %}
                     <a href="{% url django.contrib.auth.views.logout %}">Sair do sistema</a> | 
                 {% else %}
-                    <a href="{% url django.contrib.auth.views.login %}">Entrar no sistema</a> | 
+                    <a href="{% url django.contrib.auth.views.login %}">Entrar no sistema</a> |
+                    <a href="{% url cursos.views.cadastro %}">Cadastrar-se</a> |  
                 {% endif %}
                 <a href="{% url views.bemvindo %}admin/" target="_blank">Administração</a>
             {% endblock menu %}
