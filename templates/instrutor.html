@@ -7,10 +7,11 @@
 {% endblock topo %}
 
 {% block conteudo %}
-    <p><strong>Nome:</strong> {{ instrutor.nome }}<br />
+    <p><img align="right" src="{{ MEDIA_URL }}{{ instrutor.foto }}" class="foto_instrutor" />
+    <strong>Nome:</strong> {{ instrutor.nome }}<br />
     <strong>Biografia:</strong> {{ instrutor.biografia|linebreaks }}<br />
     <strong>Formação:</strong> {{ instrutor.formacao }}<br />
-    <strong>Foto:</strong> <img src="{{ MEDIA_URL }}{{ instrutor.foto }}" /></p>
+    </p>
     
     <p><strong>Cursos deste instrutor</strong></p>
     
