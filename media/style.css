@@ -134,3 +134,13 @@ body {
 	margin-right: 1em;
 	border: 0px;
 }
+
+.aviso {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #FF9;
+}

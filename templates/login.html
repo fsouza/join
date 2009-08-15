@@ -29,6 +29,9 @@
     {% endif %}
     
     <form action="." name="login" id="formLogin" method="post" onsubmit="return validarLogin(this);">
+        {% if next %}
+            <div class="aviso">Você deve efetuar login para acessar esta área, caso não seja cadastrado, <a href="{% url cursos.views.cadastro %}">clique aqui e se cadastre</a>.</div>
+        {% endif %}
         <div id="divLogin" align="right" class="divAfastada">
             Nome de usuário: {{ form.username }}<br />
             Senha: {{ form.password }}<br /><br />
