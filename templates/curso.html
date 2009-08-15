@@ -10,7 +10,9 @@
     <p><strong>Instrutor:</strong> <a href="{{ curso.instrutor.get_url }}">{{ curso.instrutor.nome }}</a><br />
     <strong>Descrição do curso:</strong> {{ curso.descricao }}<br />
     <strong>Carga horária:</strong> {{ curso.carga_horaria }} horas<br />
-    <strong>Pré-requisitos:</strong> {{ curso.pre_requisitos }}</p>
+    <strong>Pré-requisitos:</strong> {{ curso.pre_requisitos }}<br />
+    <strong>Quantidade de vagas:</strong> {{ curso.vagas }}<br />
+    <strong>Inscritos:</strong> {{ curso.inscricao_set.all.count }}</p>
     
     <p align="center"><a href="{{ curso.get_url_inscricao }}">Inscrever-se</a> | <a href="{% url cursos.views.cursos %}">Voltar para a listagem de cursos</a></p>
 {% endblock conteudo %}

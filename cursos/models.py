@@ -36,6 +36,7 @@ class Curso(models.Model):
     titulo = models.CharField(max_length = 300)
     descricao = models.TextField()
     carga_horaria = models.IntegerField()
+    vagas = models.IntegerField()
     instrutor = models.ForeignKey('Instrutor')
     pre_requisitos = models.TextField()
     slug = models.SlugField(max_length = 100, blank = True, unique = True)
@@ -76,7 +77,6 @@ class Inscricao(models.Model):
     class Meta:
         verbose_name = gettext_lazy('Inscrição')
         verbose_name_plural = gettext_lazy('Inscrições')
-
 
     status = models.BooleanField()
     aluno = models.ForeignKey('Aluno')
