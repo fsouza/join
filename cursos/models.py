@@ -2,7 +2,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
-from util.signals import curso_pre_save, instrutor_pre_save
+from util.signals import curso_pre_save, instrutor_pre_save, inscricao_post_save
 from django.db.models import signals
 from django.utils.translation import gettext_lazy
 
@@ -37,6 +37,7 @@ class Curso(models.Model):
     descricao = models.TextField()
     carga_horaria = models.IntegerField()
     vagas = models.IntegerField()
+    inscricoes_abertas = models.BooleanField(verbose_name = 'Aceitando inscrições')
     instrutor = models.ForeignKey('Instrutor')
     pre_requisitos = models.TextField()
     slug = models.SlugField(max_length = 100, blank = True, unique = True)
@@ -78,10 +79,12 @@ class Inscricao(models.Model):
         verbose_name = gettext_lazy('Inscrição')
         verbose_name_plural = gettext_lazy('Inscrições')
 
-    status = models.BooleanField()
+    status = models.BooleanField(verbose_name = 'Confirmada')
+    data_inscricao = models.DateField()
     aluno = models.ForeignKey('Aluno')
     curso = models.ForeignKey('Curso')
 
 # Conectando sinais
 signals.pre_save.connect(instrutor_pre_save, sender = Instrutor)
 signals.pre_save.connect(curso_pre_save, sender = Curso)
+signals.post_save.connect(inscricao_post_save, sender = Inscricao)

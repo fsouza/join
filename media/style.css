@@ -125,6 +125,11 @@ body {
 	color: #F00;
 }
 
+.mensagem_erro {
+	font-size: 10pt;
+	color: #F00;
+}
+
 .foto_instrutor {
 	margin-right: 1em;
 	border: 0px;

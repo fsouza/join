@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from models import Aluno
+from models import Aluno, Curso
 from util.validacoes import validar_cpf
 
 class AlunoForm(forms.ModelForm):

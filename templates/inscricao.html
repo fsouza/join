@@ -3,10 +3,20 @@
 {% block titulo %}{{ block.super }} - Inscrição no Curso "{{ curso.titulo }}"{% endblock titulo %}
 
 {% block topo %}
-    <h1>Inscrição no curso "{{ curso.titulo }}"</h1>
+    <h1>
+        {% if erro %}
+            Erro!
+        {% else %}
+            Inscrição no curso "{{ curso.titulo }}"
+        {% endif %}
+    </h1>
 {% endblock topo %}
 
 {% block conteudo %}
-    <p>Em construção.</p>
-    <p align="center"><a href="javascript:history.back();">Voltar</a></p>
+    {% if erro %}
+        <div class="mensagem_erro">{{ erro }}</div>
+    {% else %}
+        <p>Em construção.</p>
+        <p align="center"><a href="javascript:history.back();">Voltar</a></p>
+    {% endif %}
 {% endblock conteudo %}

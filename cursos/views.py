@@ -40,5 +40,7 @@ def curso(request, slug):
 @login_required
 def inscricao(request, slug):
     curso = get_object_or_404(Curso, slug = slug)
+    if not curso.inscricoes_abertas:
+        erro = u'Este curso não está recebendo inscrições.'
     return render_to_response('inscricao.html', locals(), context_instance = RequestContext(request))
 

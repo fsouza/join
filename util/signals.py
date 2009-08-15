@@ -24,3 +24,8 @@ def curso_pre_save(signal, instance, sender, **kwargs):
             new_slug = '%s-%d' % (slug, count)
 
         instance.slug = new_slug
+
+def inscricao_post_save(signal, instance, sender, **kwargs):
+    if instance.curso.vagas == instance.curso.inscricao_set.all().count() + 1:
+        instance.curso.inscricoes_abertas = False
+        instance.curso.save()
