@@ -1,4 +1,8 @@
+#coding:utf-8
+
 def calcular_digito(cpf, multiplicador):
+    '''Função responsável pelo cálculo do dígito verificador do CPF.
+    '''
     multiplos = []
     for x in cpf[:(multiplicador - 1)]:
         multiplos.append(int(x) * multiplicador)
@@ -8,6 +12,8 @@ def calcular_digito(cpf, multiplicador):
     return 0 if (valor_raiz < 2) else (11 - valor_raiz)
 
 def validar_cpf(cpf):
+    '''Função responsável por validar um cpf
+    '''
     if len(cpf) != 11:
         return False
 
