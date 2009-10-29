@@ -1,0 +1,11 @@
+syntax:glob
+
+*.pyc
+*.py~
+*.db
+.project
+.pydev*
+.settin*
+*.html~
+*.css~
+media/cursos/*
